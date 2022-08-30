@@ -12,7 +12,10 @@ module.exports = {
       md: '900px',
       lg: '1200px',
       xl: '1536px',
-    }
+    },
+    height: {
+      '12vh': '12vh',
+    },
   },
   plugins: [],
 };
