@@ -1,5 +1,4 @@
 export interface IChatHeader {
-  sampleTextProp?: string;
   roomInfo: Array<{ members: number; messages?: number }>;
 }
 
