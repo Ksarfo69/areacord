@@ -1,8 +1,6 @@
 import { IChatInput } from './ChatInput';
 
-const base: IChatInput = {
-  sampleTextProp: 'Hello world!',
-};
+const base: IChatInput = {};
 
 export const mockChatInputProps = {
   base,

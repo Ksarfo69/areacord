@@ -1,6 +1,4 @@
-export interface IChatInput {
-  sampleTextProp?: string;
-}
+export interface IChatInput {}
 
 const ChatInput: React.FC<IChatInput> = () => {
   return (
