@@ -1,7 +1,6 @@
 import Image from 'next/image';
 
 export interface IMessageBox {
-  sampleTextProp?: string;
   messageInfo?: Array<{
     image: string;
     name: string;

@@ -1,7 +1,6 @@
 import { IMessageBox } from './MessageBox';
 
 const base: IMessageBox = {
-  sampleTextProp: 'Hello world!',
   messageInfo: Array(
     {
       image: 'favicon.ico',
