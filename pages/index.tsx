@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import Head from 'next/head';
 import PrimaryLayout from '../components/layouts/PrimaryLayout/PrimaryLayout';
 import MessageBox from '../components/utils/MessageBox/MessageBox';
 
@@ -44,11 +45,11 @@ const messages = Array(
 const Home: NextPage = () => {
   return (
     <>
-      <head>
+      <Head>
         <title>Areadcord Community Chat</title>
         <meta name="description" content="Areacord community chat" />
         <link rel="icon" href="/favicon.ico" />
-      </head>
+      </Head>
       <main>
         <PrimaryLayout>
           <MessageBox messageInfo={messages} />
