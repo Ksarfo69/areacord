@@ -43,9 +43,18 @@ const messages = Array(
 
 const Home: NextPage = () => {
   return (
-    <PrimaryLayout>
-      <MessageBox messageInfo={messages} />
-    </PrimaryLayout>
+    <>
+      <head>
+        <title>Areadcord Community Chat</title>
+        <meta name="description" content="Areacord community chat" />
+        <link rel="icon" href="/favicon.ico" />
+      </head>
+      <main>
+        <PrimaryLayout>
+          <MessageBox messageInfo={messages} />
+        </PrimaryLayout>
+      </main>
+    </>
   );
 };
 
