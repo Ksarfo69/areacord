@@ -1,48 +1,20 @@
-import type { NextPage } from 'next';
+import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
 import PrimaryLayout from '../components/layouts/PrimaryLayout/PrimaryLayout';
 import MessageBox from '../components/utils/MessageBox/MessageBox';
+import axiosInstance from '../config/axiosInstance';
 
-const messages = Array(
-  {
-    image: '/favicon.ico',
-    name: 'Kwame',
-    time: '12:48 PM',
-    message: 'This is message one',
-  },
-  {
-    image: '/favicon.ico',
-    name: 'Adu',
-    time: '12:48 PM',
-    message: 'This is message two',
-  },
-  {
-    image: '/favicon.ico',
-    name: 'Poku',
-    time: '12:48 PM',
-    message: 'This is message three',
-  },
-  {
-    image: '/favicon.ico',
-    name: 'Sarfo',
-    time: '12:48 PM',
-    message: 'This is message four',
-  },
-  {
-    image: '/favicon.ico',
-    name: 'Sarfo',
-    time: '12:48 PM',
-    message: 'This is message four',
-  },
-  {
-    image: '/favicon.ico',
-    name: 'Sarfo',
-    time: '12:48 PM',
-    message: 'This is message four',
-  }
-);
+export interface IMessageBox {
+  data: Array<{
+    message_id: number;
+    room_id: number;
+    user_id: number;
+    message: string;
+    time: string;
+  }>;
+}
 
-const Home: NextPage = () => {
+const Home: NextPage<IMessageBox> = ({ data }) => {
   return (
     <>
       <Head>
@@ -52,11 +24,23 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <PrimaryLayout>
-          <MessageBox messageInfo={messages} />
+          <MessageBox data={data} />
         </PrimaryLayout>
       </main>
     </>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const room = {
+    room_id: 1,
+  };
+  const res: IMessageBox = await axiosInstance.post('/room/showRoom', room);
+  return {
+    props: {
+      data: res.data,
+    },
+  };
 };
 
 export default Home;
