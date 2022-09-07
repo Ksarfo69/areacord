@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 export interface IMessageBox {
   data: Array<{
-    message_id: number;
-    room_id: number;
+    message_id?: number;
+    room_id?: number;
     user_id: number;
     message: string;
     time: string;

@@ -1,40 +1,34 @@
 import { IMessageBox } from './MessageBox';
 
 const base: IMessageBox = {
-  messageInfo: Array(
+  data: Array(
     {
-      image: 'favicon.ico',
-      name: 'Kwame',
+      user_id: 2,
       time: '12:48 PM',
       message: 'This is message one',
     },
     {
-      image: 'favicon.ico',
-      name: 'Adu',
+      user_id: 333,
       time: '12:48 PM',
       message: 'This is message two',
     },
     {
-      image: 'favicon.ico',
-      name: 'Poku',
+      user_id: 4,
       time: '12:48 PM',
       message: 'This is message three',
     },
     {
-      image: 'favicon.ico',
-      name: 'Sarfo',
+      user_id: 55,
       time: '12:48 PM',
       message: 'This is message four',
     },
     {
-      image: 'favicon.ico',
-      name: 'Sarfo',
+      user_id: 5,
       time: '12:48 PM',
       message: 'This is message four',
     },
     {
-      image: 'favicon.ico',
-      name: 'Sarfo',
+      user_id: 6,
       time: '12:48 PM',
       message: 'This is message four',
     }
