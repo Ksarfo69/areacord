@@ -1,5 +1,6 @@
 import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
+import { useEffect, useState } from 'react';
 import PrimaryLayout from '../components/layouts/PrimaryLayout/PrimaryLayout';
 import Login from '../components/utils/Login/Login';
 import MessageBox from '../components/utils/MessageBox/MessageBox';
@@ -16,6 +17,17 @@ export interface IMessageBox {
 }
 
 const Home: NextPage<IMessageBox> = ({ data }) => {
+  const [showLogin, setshowLogin] = useState<boolean>(true);
+
+  useEffect(() => {
+    const showPopup = () => {
+      setshowLogin(true);
+    };
+    showPopup();
+    window.scrollTo(0, 0);
+  }, []);
+
+  console.log(showLogin);
   return (
     <>
       <Head>
@@ -27,7 +39,7 @@ const Home: NextPage<IMessageBox> = ({ data }) => {
         <PrimaryLayout>
           <MessageBox data={data} />
         </PrimaryLayout>
-        <Login />
+        <Login showLogin={showLogin} setshowLogin={setshowLogin} />
       </main>
     </>
   );
