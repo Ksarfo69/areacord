@@ -1,6 +1,7 @@
 import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
 import PrimaryLayout from '../components/layouts/PrimaryLayout/PrimaryLayout';
+import Login from '../components/utils/Login/Login';
 import MessageBox from '../components/utils/MessageBox/MessageBox';
 import axiosInstance from '../config/axiosInstance';
 
@@ -26,6 +27,7 @@ const Home: NextPage<IMessageBox> = ({ data }) => {
         <PrimaryLayout>
           <MessageBox data={data} />
         </PrimaryLayout>
+        <Login />
       </main>
     </>
   );
